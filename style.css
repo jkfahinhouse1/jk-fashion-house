@@ -1,0 +1,427 @@
+/* General Styles */
+:root {
+    --gold: #FFC800;
+    --black: #000000;
+    --beige: rgba(255, 250, 229, 1);
+    --dark-grey: #1A1A1A;
+}
+
+
+
+
+/* --- Animation: Button Pop --- */
+.btn-primary, .btn-gallery, .btn-view {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy feel */
+    cursor: pointer;
+}
+
+.btn-primary:hover, .btn-gallery:hover, .btn-view:hover {
+    transform: scale(1.1); /* Makes the button "pop" out */
+    box-shadow: 0px 10px 20px rgba(212, 175, 55, 0.4); /* Gold glow */
+}
+
+.btn-primary:active {
+    transform: scale(0.95); /* Slight "press" effect when clicked */
+}
+
+/* --- Card Hover Effect --- */
+.card {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Lifts the card up  */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* --- Lightbox / Modal Styles --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 50px; 
+    left: 0; top: 0;
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.9); 
+    cursor: zoom-out;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    animation: zoomIn 0.3s; /* Smooth pop-in for the image */
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.nav-links a:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color: var(--gold);
+    text-decoration: underline;
+    text-align: center;
+}
+
+.nav-links a img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--beige);
+    color: var(--black);
+}
+
+/* Navbar [cite: 1, 2] */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background: var(--black);
+    color: var(--gold);
+    align-items: center;
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 80%;
+}
+
+.logo { font-weight: bold; font-size: 1.5rem; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+
+.nav-links a { color: white; text-decoration: none; font-size: 1rem; }
+.nav-links img { width: 25px; height: 25px; }
+
+/* Hero [cite: 3, 4] */
+#home { background: url() no-repeat center center/cover; }
+.hero { display: flex; align-items: center; justify-content: center; justify-content: space-around; min-height: 80vh; }
+
+.hero-content h1 { 
+    font-family: 'Averia Serif Libre', serif; 
+    font-size: 4rem; 
+    line-height: 1.1;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: black;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-gallery {
+    display: inline-block;
+    background: var(--gold);
+    color: black;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/*Collection [cite: 9, 10, 11, 12] */
+#collection { padding: 50px; text-align: center; }
+.featured-section h2 { font-family: 'Averia Serif Libre', serif; font-size: 2.5rem; margin-bottom: 20px; }
+#collection {background-color: #503800; color: white;}
+/* Cards [cite: 5, 6, 7, 8] */
+.collection-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    padding: 50px; 
+}
+
+.card img { width: 100%; border-radius: 15px; }
+
+/* About [cite: 14, 15] */
+#about { padding: 5px; text-align: left; background-color: beige; color: black; }
+.about-container { display: flex; flex-direction: row; align-items: center; justify-content: center; }
+.about-container .about-content { max-width: 500px; margin-right: 50px; }
+#about h2 { font-family: 'Averia Serif Libre', serif; font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+.about-image img { border-radius: 25px; }
+.about-container {margin-bottom: 30px;}
+
+
+
+/* Footer [cite: 13, 16] */
+footer {
+    background: var(--dark-grey);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.gold-text { color: var(--gold); }
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-logo img {
+    width: 180px;
+    height: auto;
+}
+.btn-view {
+    background: var(--gold);
+    border: none;
+    padding: 8px 25px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer-contact li {
+    list-style: none;
+    margin: 10px 0;
+}
+.footer-contact img {
+    width: 110px;
+    height: 110px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+.logo a {
+    color: var(--gold);
+    text-decoration: none;
+}
+.footer-map p {
+    margin-bottom: 15px;
+}
+.footer-map .btn-view {
+    background: var(--gold);
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.footer-map .btn-view a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer Map Container */
+.footer-map {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.map-container {
+    margin-top: 15px;
+    border: 2px solid var(--gold); /* Adds a premium gold border around the map */
+    border-radius: 17px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.map-container:hover {
+    transform: scale(1.02); /* Slight pop effect when hovering over the map */
+}
+
+
+
+
+
+
+/*Gallery page
+
+/* Gallery Page Specifics */
+.gallery-container {
+    padding: 80px 50px;
+    background-color: var(--beige);
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.gallery-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.gallery-grid {
+    display: columns;
+    columns: 3; /* Creates a high-end magazine layout */
+    column-gap: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02);
+    border-color: var(--gold);
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive fix for phones */
+@media (max-width: 768px) {
+    .gallery-grid { columns: 1; }
+}
+
+/* --- MOBILE VERSION (Screens 768px and below) --- */
+@media (max-width: 768px) {
+    
+    /* Navbar: Centered and scaled for touch */
+    .navbar {
+        max-width: 95%; /* More width on small screens */
+        flex-direction: column;
+        padding: 15px;
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        padding-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    /* Hero Section: Stack text on top of image */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Shrunk for mobile visibility */
+        margin-bottom: 20px;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 300px; /* Prevents image from being too huge */
+        margin-top: 30px;
+    }
+
+    /* Collection Section: Single column grid */
+    .collection-grid {
+        grid-template-columns: 1fr; /* Stacks cards vertically */
+        padding: 20px;
+        gap: 30px;
+    }
+
+    /* About Section: Reversed stack (Text then Image) */
+    .about-container {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .about-container .about-content {
+        max-width: 100%;
+        margin-right: 0;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    #about h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Footer: 1-column layout */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-logo img {
+        width: 140px;
+    }
+
+    .footer-contact img {
+        width: 80px; /* Smaller icons for mobile */
+        height: 80px;
+    }
+
+    .footer-map {
+        min-width: 100%;
+        padding: 0;
+    }
+
+    /* Gallery: Handled by your existing @media rule, 
+       but we ensure the container padding is smaller */
+    .gallery-container {
+        padding: 40px 20px;
+    }
+
+    .gallery-header h1 {
+        font-size: 2.2rem;
+    }
+}
