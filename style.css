@@ -386,13 +386,17 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem; /* Shrunk for mobile visibility */
+        font-size: 2rem; /* Shrunk for mobile visibility */
         margin-bottom: 20px;
     }
 
     .hero-image img {
-        width: 100%;
-        margin: top 0;
+        content: url('/Images/hero\ phone.png'); /* 👈 your mobile image */
+    }
+    
+    .btn-primary {
+    padding: 12px 25px;
+    font-size: 0.6rem;
     }
 
     /* Collection Section: Single column grid */
